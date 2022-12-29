@@ -194,7 +194,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
 		}
 
 		try {
-			setLoadingChat(true);
+			// setLoadingChat(true);
 
 			const config = {
 				headers: {
@@ -208,7 +208,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
 				config
 			);
 			console.log(data);
-			setLoadingChat(false);
+			// setLoadingChat(false);
 			setSearchResult(data);
 		} catch (error) {
 			toast({
@@ -219,7 +219,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
 				isClosable: true,
 				position: "bottom-left",
 			});
-			setLoadingChat(false);
+			// setLoadingChat(false);
 		}
 	};
 	const handleSearch = debouncer(searchedUsers, 500);
