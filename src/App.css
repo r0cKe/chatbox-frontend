@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
+
+body {
+	box-sizing: border-box;
+}
+
+.scroll-box {
+	background-color: #e8e8e8;
+	background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
+}
+
+.App {
+	min-height: 100vh;
+	display: flex;
+	background-color: #008c8c;
+	background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+}
+
+@keyframes notif {
+	from {
+		width: 25px;
+		height: 25px;
+	}
+	to {
+		width: 15px;
+		height: 15px;
+	}
+}
+
+.notification-icon {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 8px;
+	color: #fff;
+	font-size: 10px;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: red;
+	animation-name: notif;
+	animation-duration: 1s;
+	font-weight: bold;
+}
+
+::-webkit-scrollbar {
+	width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(136, 136, 136, 0.281);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+
+@media screen and (max-width: 350px) {
+	.message-box {
+		font-size: 0.65rem;
+		padding: 2px 8px !important;
+		border-radius: 10px !important;
+	}
+	.message-input {
+		font-size: 0.75rem !important;
+		padding: 0 10px !important;
+	}
+	.chakra-input__right-element {
+		width: 3rem !important;
+	}
+	.showPass-btn {
+		padding: 0 6px !important;
+		font-size: .55rem !important;
+	}
+}
