@@ -119,7 +119,7 @@ const Signup = (props) => {
 		}
 
 		try {
-			const response = await fetch(`/api/user`, {
+			const response = await fetch(`https://chatbox-backend.onrender.com/api/user`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

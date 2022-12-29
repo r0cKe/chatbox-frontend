@@ -66,7 +66,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
 			};
 
 			const { data } = await axios.put(
-				"/api/chat/groupremove",
+				"https://chatbox-backend.onrender.com/api/chat/groupremove",
 				{
 					chatId: selectedChat._id,
 					userId: selUser._id,
@@ -128,7 +128,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
 			};
 
 			const { data } = await axios.put(
-				"/api/chat/groupadd",
+				"https://chatbox-backend.onrender.com/api/chat/groupadd",
 				{
 					chatId: selectedChat._id,
 					userId: selUser._id,
@@ -166,7 +166,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
 			};
 
 			const { data } = await axios.put(
-				"/api/chat/rename",
+				"https://chatbox-backend.onrender.com/api/chat/rename",
 				{ chatId: selectedChat._id, chatName: groupChatName },
 				config
 			);
@@ -194,7 +194,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
 		}
 
 		try {
-			// setLoadingChat(true);
+			setLoadingChat(true);
 
 			const config = {
 				headers: {
@@ -204,11 +204,11 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
 			};
 
 			const { data } = await axios.get(
-				`/api/user?search=${query}`,
+				`https://chatbox-backend.onrender.com/api/user?search=${query}`,
 				config
 			);
 			console.log(data);
-			// setLoadingChat(false);
+			setLoadingChat(false);
 			setSearchResult(data);
 		} catch (error) {
 			toast({
@@ -219,11 +219,10 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
 				isClosable: true,
 				position: "bottom-left",
 			});
-			// setLoadingChat(false);
+			setLoadingChat(false);
 		}
 	};
 	const handleSearch = debouncer(searchedUsers, 500);
-	// const handleSearch = () => {};
 
 	return (
 		<>

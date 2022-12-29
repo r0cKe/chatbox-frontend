@@ -67,7 +67,7 @@ const SideDrawer = (props) => {
 			};
 
 			const { data } = await axios.get(
-				`/api/user?search=${query}`,
+				`https://chatbox-backend.onrender.com/api/user?search=${query}`,
 				config
 			);
 			setLoading(false);
@@ -100,7 +100,7 @@ const SideDrawer = (props) => {
 			};
 
 			const { data } = await axios.post(
-				"/api/chat",
+				"https://chatbox-backend.onrender.com/api/chat",
 				{ userId },
 				config
 			);
