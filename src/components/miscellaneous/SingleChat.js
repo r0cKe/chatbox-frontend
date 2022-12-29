@@ -18,7 +18,7 @@ import UpdateGroupChatModal from "./UpdateGroupChatModal";
 import io from "socket.io-client";
 import animationData from "../../animations/typing.json";
 import Lottie from "react-lottie";
-const ENDPOINT = "https://mern-chat-box.herokuapp.com/";
+const ENDPOINT = "https://chatbox-backend.onrender.com/";
 
 // const ENDPOINT = "http://localhost:5000";
 let socket, selectedChatCompare;
@@ -100,7 +100,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 				);
 				socket.emit("new message", data);
 				setMessages([...messages, data]);
-				setFetchAgain(!fetchAgain);
+				// setFetchAgain(!fetchAgain);
 			} catch (error) {
 				toast({
 					title: "Error Occured",
@@ -143,7 +143,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 				setMessages([...messages, newMessageReceived]);
 			}
 		});
-	});
+	},[]);
 
 	const typingHandler = (e) => {
 		setNewMessage(e.target.value);
