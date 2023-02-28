@@ -18,7 +18,7 @@ import UpdateGroupChatModal from "./UpdateGroupChatModal";
 import io from "socket.io-client";
 import animationData from "../../animations/typing.json";
 import Lottie from "react-lottie";
-const ENDPOINT = "https://mern-chat-box.herokuapp.com/";
+const ENDPOINT = "https://chatbox-backend.onrender.com";
 
 // const ENDPOINT = "http://localhost:5000";
 let socket, selectedChatCompare;
@@ -33,9 +33,9 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 
   const toast = useToast();
 
-//   useEffect(() => {
-//     fetchMessages();
-//   }, [messages]);
+  //   useEffect(() => {
+  //     fetchMessages();
+  //   }, [messages]);
 
   const defaultOptions = {
     loop: true,
@@ -62,7 +62,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `https://chatbox-backend.onrender.com/api/message/${selectedChat._id}`,
+        `${ENDPOINT}/api/message/${selectedChat._id}`,
         config
       );
       setMessages(data);
@@ -95,7 +95,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         };
         setNewMessage("");
         const { data } = await axios.post(
-          `https://chatbox-backend.onrender.com/api/message`,
+          `${ENDPOINT}/api/message`,
           {
             content: newMessage,
             chatId: selectedChat._id,
