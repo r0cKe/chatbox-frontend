@@ -33,6 +33,10 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 
   const toast = useToast();
 
+  useEffect(() => {
+    fetchMessages();
+  }, [messages]);
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
