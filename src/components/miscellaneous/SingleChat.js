@@ -28,7 +28,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 	const [loading, setLoading] = useState(false);
 	const [newMessage, setNewMessage] = useState("");
 	const [socketConnected, setSocketConnected] = useState(false);
-	const [typing, setTyping] = useState(false);
+	// const [typing, setTyping] = useState(false);
 	const [isTyping, setIsTyping] = useState(false);
 
 	const toast = useToast();

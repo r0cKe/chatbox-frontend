@@ -32,18 +32,9 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
 
 	const { user, selectedChat, setSelectedChat, debouncer } = ChatState();
 
+	console.log(user);
+
 	const handleRemove = async (selUser) => {
-		if (selectedChat.users.length === 3) {
-			toast({
-				title: "Cannot remove user",
-				description: "Group chat must have atleast 3 members",
-				status: "warning",
-				duration: 4000,
-				isClosable: true,
-				position: "bottom",
-			});
-			return;
-		}
 		if (selectedChat.groupAdmin._id !== user._id && selUser._id !== user._id) {
 			toast({
 				title: "Only admin can remove users",
@@ -106,7 +97,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
 			return;
 		}
 
-		if (selectedChat.groupAdmin._id !== selUser._id) {
+		if (selectedChat.groupAdmin._id !== user._id) {
 			toast({
 				title: "Only admin can add users",
 				status: "error",
